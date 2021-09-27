@@ -1,34 +1,25 @@
-import React from 'react';
-import {Col, Row, Container} from 'reactstrap';
-import Header from '../header';
-import RandomChar from '../randomChar';
-import ItemList from '../itemList';
-import CharDetails from '../charDetails';
+import AppInfo from '../app-info/app-info';
+import SearchPanel from '../search-panel/search-panel';
+import AppFilter from '../app-filter/app-filter';
+import EmployeesList from '../employees-list/employees-list';
+import EmployeesAddForm from '../employees-add-form/employees-add-form';
 
+import './app.css';
 
-const App = () => {
-    return (
-        <> 
-            <Container>
-                <Header />
-            </Container>
-            <Container>
-                <Row>
-                    <Col lg={{size: 5, offset: 0}}>
-                        <RandomChar/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md='6'>
-                        <ItemList />
-                    </Col>
-                    <Col md='6'>
-                        <CharDetails />
-                    </Col>
-                </Row>
-            </Container>
-        </>
-    );
-};
+function App() {
+  return (
+    <div className="app">
+        <AppInfo />
+
+        <div className="search-panel">
+            <SearchPanel/>
+            <AppFilter/>
+        </div>
+        
+        <EmployeesList/>
+        <EmployeesAddForm/>
+    </div>
+  );
+}
 
 export default App;
